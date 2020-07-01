@@ -4,7 +4,7 @@ pipeline {
     agent any
     options {
         parallelsAlwaysFailFast()
-        timestamps()
+       // timestamps()
         //withCredentials(awsCredentials)
     }
     stages {
