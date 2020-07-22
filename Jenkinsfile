@@ -11,9 +11,9 @@ pipeline {
         stage("Maven Build") {
             
             steps {
+                git url: 'https://github.com/Sherin-m/maven-project.git'
                 sh '''
-                mvn --version
-               echo "nothing is changeed"
+                mvn clean package
                 '''
             }
         }
