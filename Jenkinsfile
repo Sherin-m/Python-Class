@@ -19,7 +19,9 @@ pipeline {
         }
         stage("Code Testing") {
             steps {
-                echo "Here we are running code test"
+                echo "Cecking file existed or not "
+                sh "cd $WORKSPACE/webapp/target/"
+                sh "ls -lrt"
             }
         }
         stage("S3  upload") {
