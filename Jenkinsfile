@@ -53,6 +53,14 @@ pipeline {
            }
         }
         stage("Lmabda Function") {
+             input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    choice(name: 'Approval', choices: ['Apprvoed', 'Rejected'], description: '?')
+                }
+            }
           steps {
                 echo "Lmabda function running"
                 echo "nothing is running"
