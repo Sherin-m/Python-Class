@@ -21,14 +21,11 @@ pipeline {
             steps {
                 echo "Cecking file existed or not "
                 sh "cd $WORKSPACE/webapp/target/"
+                sh "pwd"
                 sh "ls -lrt"
             }
         }
         stage("S3  upload") {
-            when {
-                beforeAgent true
-                branch 'master'
-            }
             steps {
                 sh '''
                 echo "aws s3 cp" $WORKSPACE/webapp/target/*.?ar "s3://testing.com/building/"
@@ -38,7 +35,7 @@ pipeline {
         }
         stage("Lmabda Function") {
           steps {
-                echo "Lmabda function running "
+                echo "Lmabda function running"
                 echo "nothing is running"
                 echo "change something"
                 
