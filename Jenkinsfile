@@ -30,6 +30,11 @@ pipeline {
                 mvn clean package
                 '''
             }
+            post { 
+                success { 
+                    echo 'Job got successed'
+                }
+            }
         }
         stage("Code Testing") {
             options {
@@ -67,6 +72,11 @@ pipeline {
                 echo "change something"
                 
            }
+        }
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
         }
     }
 }
