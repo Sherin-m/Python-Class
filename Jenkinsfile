@@ -7,6 +7,7 @@ pipeline {
        // timestamps()
         //withCredentials(awsCredentials)
     }
+    when { branch 'dev-ui' }
     stages {
         stage("Maven Build") {
             
