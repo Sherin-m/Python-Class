@@ -1,7 +1,7 @@
 //def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-test']]
 
 pipeline {
-    agent { node { label 'Master' } }
+    agent { node { label 'Master' }}
     options {
         parallelsAlwaysFailFast()
        // timestamps()
