@@ -7,11 +7,13 @@ pipeline {
        // timestamps()
         //withCredentials(awsCredentials)
     }
-    when { branch 'dev-ui' }
+    
     stages {
         stage("Maven Build") {
+            when { branch 'dev-ui'}
             
             steps {
+                
                 git url: 'https://github.com/Sherin-m/maven-project.git'
                 sh '''
                 mvn clean package
