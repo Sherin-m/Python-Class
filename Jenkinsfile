@@ -36,7 +36,7 @@ pipeline {
                 timeout(time: 1, unit: 'MINUTES') 
             }
             steps {
-                sh "sleep 120s"
+                
                 echo "Cecking file existed or not "
                 echo "$WORKSPACE"
                 sh "cd $WORKSPACE/webapp/target/"
