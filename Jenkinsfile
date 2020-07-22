@@ -4,7 +4,7 @@ pipeline {
     agent { node { label 'Master' }}
     options {
         parallelsAlwaysFailFast()
-       // timestamps()
+        timestamps()
         //withCredentials(awsCredentials)
     }
     
