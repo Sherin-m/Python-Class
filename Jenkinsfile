@@ -20,6 +20,7 @@ pipeline {
         stage("Code Testing") {
             steps {
                 echo "Cecking file existed or not "
+                echo "$WORKSPACE"
                 sh "cd $WORKSPACE/webapp/target/"
                 sh "pwd"
                 sh "ls -lrt"
