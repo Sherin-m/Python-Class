@@ -10,7 +10,7 @@ pipeline {
     
     stages {
         stage("Maven Build") {
-            when { branch 'dev-ui'}
+            when { branch 'dev-uikhkl'}
             
             steps {
                 
