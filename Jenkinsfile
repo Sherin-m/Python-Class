@@ -3,8 +3,8 @@
 pipeline {
     agent { node { label 'Master' }}
     options {
-        // parallelsAlwaysFailFast()
-        timestamps()
+         parallelsAlwaysFailFast()
+        //timestamps()
         //withCredentials(awsCredentials)
     }
     
@@ -21,7 +21,11 @@ pipeline {
             }
         }
         stage("Code Testing") {
+            options {
+                timeout(time: 1, unit: 'MINUTES') 
+            }
             steps {
+                sh "sleep 120s"
                 echo "Cecking file existed or not "
                 echo "$WORKSPACE"
                 sh "cd $WORKSPACE/webapp/target/"
