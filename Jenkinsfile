@@ -21,7 +21,7 @@ pipeline {
     
     stages {
         stage("Maven Build") {
-            when { branch 'dev-uikhkl'}
+            when { branch "${params.BranchName}"}
             
             steps {
                 
